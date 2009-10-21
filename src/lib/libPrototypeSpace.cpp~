@@ -1,0 +1,13 @@
+// Just a test function to see if we linked properly
+
+#include <iostream>
+
+namespace space {
+
+	bool test() {
+		std::cout << "libPrototypeSpace is working fine ;)";
+		return true;
+
+	}
+
+}

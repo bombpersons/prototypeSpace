@@ -1,0 +1,5 @@
+noinst_LIBRARIES = @top_srcdir@/lib/libPrototypeSpace.a
+
+libPrototypeSpace_a_SOURCES = libPrototypeSpace.cpp
+
+INCLUDES = -I@top_srcdir@/includes

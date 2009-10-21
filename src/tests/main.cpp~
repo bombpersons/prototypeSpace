@@ -1,0 +1,14 @@
+/*
+ * Just a small test app, to test wether or not the library
+ * was built properly.
+ *
+*/
+
+#include <iostream>
+#include <libPrototypeSpace.h>
+
+int main() {
+	std::cout << "Testing..." << endl;
+	return space::test();
+
+}

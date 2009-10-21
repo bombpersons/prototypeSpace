@@ -1,0 +1,6 @@
+bin_PROGRAMS = tests
+tests_SOURCES = main.cpp
+
+INCLUDES = -I@top_srcdir@/includes
+
+LDADD = @top_srcdir@/lib/libPrototypeSpace.a
