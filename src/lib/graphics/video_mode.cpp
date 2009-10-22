@@ -10,6 +10,8 @@
 
 #include <prototypeSpace/debug/debug.h>
 
+#include <exception>
+
 namespace space {
 
 	/* -------------------- autoVideoMode ----------------------------------
@@ -27,8 +29,17 @@ namespace space {
 		// Try to create a window using the best mode.
 		sf::VideoMode mode = sf::VideoMode::GetMode(0);
 		
-		sf::RenderWindow* window = new sf::RenderWindow(mode, 
+		sf::RenderWindow* window;
+		
+		try {
+			window = new sf::RenderWindow(mode, 
 											_title, sf::Style::Fullscreen);
+		} catch (std::bad_alloc& memory) {
+			#ifdef ENABLE_DEBUGGING
+			debug.write(1, "Exception: %s", memory.what());
+			debug.write(1, "Error: Couldn't allocate memory for Window!");
+			#endif
+		}
 		
 		// Did that work?
 		if (window != NULL) {
@@ -72,10 +83,17 @@ namespace space {
 		
 		sf::RenderWindow* window = NULL;
 		
-		if (_fullscreen) {
-			window = new sf::RenderWindow(mode, _title, sf::Style::Fullscreen);
-		} else {
-			window = new sf::RenderWindow(mode, _title);
+		try {
+			if (_fullscreen) {
+				window = new sf::RenderWindow(mode, _title, sf::Style::Fullscreen);
+			} else {
+				window = new sf::RenderWindow(mode, _title);
+			}
+		} catch (std::bad_alloc& memory) {
+			#ifdef ENABLE_DEBUGGING
+			debug.write(1, "Exception: %s", memory.what());
+			debug.write(1, "Error: Couldn't allocate memory for Window!");
+			#endif
 		}
 		
 		// Did that work?

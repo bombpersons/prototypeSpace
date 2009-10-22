@@ -46,7 +46,7 @@ ARFLAGS = cru
 libPrototypeSpace_a_AR = $(AR) $(ARFLAGS)
 libPrototypeSpace_a_LIBADD =
 am_libPrototypeSpace_a_OBJECTS = libPrototypeSpace.$(OBJEXT) \
-	debug.$(OBJEXT) video_mode.$(OBJEXT)
+	debug.$(OBJEXT) window_poll.$(OBJEXT) video_mode.$(OBJEXT)
 libPrototypeSpace_a_OBJECTS = $(am_libPrototypeSpace_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -181,7 +181,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = libPrototypeSpace.a
-libPrototypeSpace_a_SOURCES = libPrototypeSpace.cpp debug/debug.cpp graphics/video_mode.cpp
+libPrototypeSpace_a_SOURCES = libPrototypeSpace.cpp debug/debug.cpp input/window_poll.cpp graphics/video_mode.cpp
 INCLUDES = -I@top_srcdir@/includes -I@top_srcdir@
 all: all-am
 
@@ -233,6 +233,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/debug.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPrototypeSpace.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/video_mode.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/window_poll.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -268,6 +269,20 @@ debug.obj: debug/debug.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='debug/debug.cpp' object='debug.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o debug.obj `if test -f 'debug/debug.cpp'; then $(CYGPATH_W) 'debug/debug.cpp'; else $(CYGPATH_W) '$(srcdir)/debug/debug.cpp'; fi`
+
+window_poll.o: input/window_poll.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT window_poll.o -MD -MP -MF $(DEPDIR)/window_poll.Tpo -c -o window_poll.o `test -f 'input/window_poll.cpp' || echo '$(srcdir)/'`input/window_poll.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/window_poll.Tpo $(DEPDIR)/window_poll.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='input/window_poll.cpp' object='window_poll.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o window_poll.o `test -f 'input/window_poll.cpp' || echo '$(srcdir)/'`input/window_poll.cpp
+
+window_poll.obj: input/window_poll.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT window_poll.obj -MD -MP -MF $(DEPDIR)/window_poll.Tpo -c -o window_poll.obj `if test -f 'input/window_poll.cpp'; then $(CYGPATH_W) 'input/window_poll.cpp'; else $(CYGPATH_W) '$(srcdir)/input/window_poll.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/window_poll.Tpo $(DEPDIR)/window_poll.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='input/window_poll.cpp' object='window_poll.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o window_poll.obj `if test -f 'input/window_poll.cpp'; then $(CYGPATH_W) 'input/window_poll.cpp'; else $(CYGPATH_W) '$(srcdir)/input/window_poll.cpp'; fi`
 
 video_mode.o: graphics/video_mode.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT video_mode.o -MD -MP -MF $(DEPDIR)/video_mode.Tpo -c -o video_mode.o `test -f 'graphics/video_mode.cpp' || echo '$(srcdir)/'`graphics/video_mode.cpp

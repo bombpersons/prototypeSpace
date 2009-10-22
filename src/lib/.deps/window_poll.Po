@@ -1,4 +1,5 @@
-main.o: main.cpp /usr/include/SFML/System.hpp \
+window_poll.o: input/window_poll.cpp /usr/include/SFML/Graphics.hpp \
+  /usr/include/SFML/Window.hpp /usr/include/SFML/System.hpp \
   /usr/include/SFML/Config.hpp /usr/include/c++/4.3/climits \
   /usr/lib/gcc/i486-linux-gnu/4.3.3/include-fixed/limits.h \
   /usr/lib/gcc/i486-linux-gnu/4.3.3/include-fixed/syslimits.h \
@@ -99,9 +100,7 @@ main.o: main.cpp /usr/include/SFML/System.hpp \
   /usr/include/SFML/System/Vector2.hpp \
   /usr/include/SFML/System/Vector2.inl \
   /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl /usr/include/c++/4.3/iostream \
-  ../../includes/prototypeSpace/prototypeSpace.h \
-  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
+  /usr/include/SFML/System/Vector3.inl \
   /usr/include/SFML/Window/Context.hpp /usr/include/SFML/Window/Event.hpp \
   /usr/include/SFML/Window/Input.hpp \
   /usr/include/SFML/Window/WindowListener.hpp \
@@ -152,10 +151,12 @@ main.o: main.cpp /usr/include/SFML/System.hpp \
   /usr/include/SFML/Graphics/Shape.hpp \
   /usr/include/SFML/Graphics/Sprite.hpp \
   /usr/include/SFML/Graphics/String.hpp \
-  ../../includes/prototypeSpace/libPrototypeSpace.h \
   ../../includes/prototypeSpace/debug/debug.h ../../config.h \
-  ../../includes/prototypeSpace/input/window_poll.h \
-  ../../includes/prototypeSpace/graphics/video_mode.h
+  ../../includes/prototypeSpace/input/window_poll.h
+
+/usr/include/SFML/Graphics.hpp:
+
+/usr/include/SFML/Window.hpp:
 
 /usr/include/SFML/System.hpp:
 
@@ -455,14 +456,6 @@ main.o: main.cpp /usr/include/SFML/System.hpp \
 
 /usr/include/SFML/System/Vector3.inl:
 
-/usr/include/c++/4.3/iostream:
-
-../../includes/prototypeSpace/prototypeSpace.h:
-
-/usr/include/SFML/Graphics.hpp:
-
-/usr/include/SFML/Window.hpp:
-
 /usr/include/SFML/Window/Context.hpp:
 
 /usr/include/SFML/Window/Event.hpp:
@@ -595,12 +588,8 @@ main.o: main.cpp /usr/include/SFML/System.hpp \
 
 /usr/include/SFML/Graphics/String.hpp:
 
-../../includes/prototypeSpace/libPrototypeSpace.h:
-
 ../../includes/prototypeSpace/debug/debug.h:
 
 ../../config.h:
 
 ../../includes/prototypeSpace/input/window_poll.h:
-
-../../includes/prototypeSpace/graphics/video_mode.h:
